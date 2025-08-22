@@ -11,6 +11,9 @@ public class WebClientConfig {
 
     @Bean
     public WebClient webClient(WebClient.Builder builder ){
-        return builder.baseUrl("https://api.example.com").build();
+        return builder
+        .baseUrl("https://www.reddit.com/r")
+        .defaultHeader("User-Agent", "spring-boot-app/1.0 (by /u/ElephantAnurag)")
+        .build();
     }
 }

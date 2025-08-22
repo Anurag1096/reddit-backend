@@ -14,6 +14,9 @@ public class ServiceReddit {
 
     }
     public Mono<String> getSubRedditReactive(String name){
-        return webClient.get().uri("/${name}.json",name).retrieve().bodyToMono(String.class);
+        return webClient.get()
+                .uri("/{name}.json",name)
+                .retrieve()
+                .bodyToMono(String.class);
     }
 }
